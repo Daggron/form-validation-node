@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form validator</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+</head>
+<body>
+    <%   if (success) {%>   
+        <h1 class="alert alert-success text-dark">
+            Form Submitted successfully
+        </h1>
+    <% } else {%>
+       
+        <% if (errors) {%>
+        
+            <% for (var i=0; i<errors.length;i++){ %>
+               
+                    <div class="col-lg-11 col-sm-10 alert alert-danger mx-auto">
+                            <%= errors[i].msg %>
+                    </div>
+                    
+                
+            <% } %>
+            
+        <% } %>
+    <form action="submit" method="POST" class="mx-auto col-lg-8 col-sm-12">
+        <div class="form-group col-lg-6 col-md-10">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group col-lg-6 col-md-10">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password"  name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group col-lg-6 col-md-10">
+            <label for="exampleInputPassword2">Password</label>
+            <input type="password" name="confirm" class="form-control" id="exampleInputPassword2" placeholder="Password">
+          </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <% } %>
+    <script src="/js/js/bootstrap.min.js" ></script>
+</body>
+</html>
