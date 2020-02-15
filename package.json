@@ -27,6 +27,6 @@
     "express-flash": "0.0.2",
     "express-session": "^1.16.2",
     "express-validator": "^5.2.0",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   }
 }
